@@ -60,7 +60,11 @@ function getDrinkInfo () {
 
 function deleteKoktel() {
   let key = prompt ('Введите название коктеля');
-  drinkStorage.deleteValue ( key );
+  let del = drinkStorage.deleteValue ( key );
+  if (del==true)
+    alert('Удалено!');
+  else
+    alert('Не найдено в базе!');
 };
 
 function getName () {
