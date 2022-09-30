@@ -1,26 +1,27 @@
 "use strict";
 
-function HashStorageFunc() {
-  let self = this;
-      self.storage = {};
+class HashStorageFunc {
+  constructor() {
+  this.storage = {};
+  }
 
-  self.addValue = function(key, value) {
-      self.storage[key] = value;
+  addValue = function(key, value) {
+      this.storage[key] = value;
   };
-  self.getValue = function(key) {
-    return self.storage[key];
+  getValue = function(key) {
+    return this.storage[key];
   };
-  self.deleteValue = function(key) {
-    if (( key in self.storage ) == true ){
-    delete self.storage[key];
+  deleteValue = function(key) {
+    if (( key in this.storage ) == true ){
+    delete this.storage[key];
     return true;
     } else {
       return false
     }
   };
-  self.getKeys = function() {
+  getKeys = function() {
     let k, st = [];
-    for (k in self.storage)
+    for (k in this.storage)
       st.push(k);
     return st;
   };
