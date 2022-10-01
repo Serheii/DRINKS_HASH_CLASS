@@ -5,13 +5,13 @@ class HashStorageFunc {
   this.storage = {};
   }
 
-  addValue = function(key, value) {
+  addValue(key, value) {
       this.storage[key] = value;
   };
-  getValue = function(key) {
+  getValue(key) {
     return this.storage[key];
   };
-  deleteValue = function(key) {
+  deleteValue(key) {
     if (( key in this.storage ) == true ){
     delete this.storage[key];
     return true;
@@ -19,7 +19,7 @@ class HashStorageFunc {
       return false
     }
   };
-  getKeys = function() {
+  getKeys() {
     let k, st = [];
     for (k in this.storage)
       st.push(k);
@@ -54,8 +54,8 @@ function getDrinkInfo () {
     } else {
       a = 'Безалкогольный напиток ';
     }
-  }
     alert(a+'"'+key+'"'+'\n'+'Рецепт приготовления:\n'+n.key.recept);
+  };
 };
 
 function deleteKoktel() {
