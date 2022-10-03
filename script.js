@@ -44,24 +44,22 @@ function drinkInfo() {
 
 function getDrinkInfo () {
   let key = prompt ('Введите название коктеля');
-  let n = drinkStorage.getValue ( key );
   let a;
-  if ( n == undefined)
+  if ( drinkStorage.getValue(key) == undefined)
     alert('Такого напитка нет');
   else {
-      if (n.key.alk == true) {
+      if (drinkStorage.getValue(key).key.alk == true) {
       a = 'Алкогольный напиток ';
     } else {
       a = 'Безалкогольный напиток ';
     }
-    alert(a+'"'+key+'"'+'\n'+'Рецепт приготовления:\n'+n.key.recept);
+    alert(a+'"'+key+'"'+'\n'+'Рецепт приготовления:\n'+drinkStorage.getValue(key).key.recept);
   };
 };
 
 function deleteKoktel() {
   let key = prompt ('Введите название коктеля');
-  let del = drinkStorage.deleteValue ( key );
-  if (del==true)
+  if (drinkStorage.deleteValue ( key ) == true)
     alert('Удалено!');
   else
     alert('Не найдено в базе!');
@@ -71,6 +69,6 @@ function getName () {
    if ( drinkStorage.getKeys().length === 0 ) {
      alert('В хранилище нет ни одного напитка');
    } else {
-     alert(drinkStorage.getKeys());
+      alert(drinkStorage.getKeys());
   };
 };
