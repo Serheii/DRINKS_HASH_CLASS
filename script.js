@@ -34,26 +34,25 @@ function drinkInfo() {
   let recept = prompt ('Введите рецепт');
   let alk = confirm ('Коктель алкогольный?');
   let value = {
-    key : {
       recept,
       alk
     }
-  };
   drinkStorage.addValue ( key , value );
 };
 
 function getDrinkInfo () {
   let key = prompt ('Введите название коктеля');
   let a;
-  if ( drinkStorage.getValue(key) == undefined)
+  let b = drinkStorage.getValue(key);
+  if ( b == undefined)
     alert('Такого напитка нет');
   else {
-      if (drinkStorage.getValue(key).key.alk == true) {
+      if (b.alk == true) {
       a = 'Алкогольный напиток ';
     } else {
       a = 'Безалкогольный напиток ';
     }
-    alert(a+'"'+key+'"'+'\n'+'Рецепт приготовления:\n'+drinkStorage.getValue(key).key.recept);
+    alert(a+'"'+key+'"'+'\n'+'Рецепт приготовления:\n'+b.recept);
   };
 };
 
@@ -66,9 +65,10 @@ function deleteKoktel() {
 };
 
 function getName () {
-   if ( drinkStorage.getKeys().length === 0 ) {
+  let c = drinkStorage.getKeys();
+   if ( c.length === 0 ) {
      alert('В хранилище нет ни одного напитка');
    } else {
-      alert(drinkStorage.getKeys());
+      alert(c);
   };
 };
