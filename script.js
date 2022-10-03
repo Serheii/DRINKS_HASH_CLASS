@@ -3,7 +3,7 @@
 class HashStorageFunc {
   constructor() {
   this.storage = {};
-  }
+  };
 
   addValue(key, value) {
       this.storage[key] = value;
@@ -16,12 +16,12 @@ class HashStorageFunc {
     delete this.storage[key];
     return true;
     } else {
-      return false
+      return false;
     }
   };
   getKeys() {
-    let k, st = [];
-    for (k in this.storage)
+    let st = [];
+    for (let k in this.storage)
       st.push(k);
     return st;
   };
@@ -68,10 +68,9 @@ function deleteKoktel() {
 };
 
 function getName () {
-  let a = drinkStorage.getKeys;
-    if ( a()[0] == undefined ) {
-      alert('В хранилище нет ни одного напитка');
-    } else {
-       alert(a());
-   }
+   if ( drinkStorage.getKeys().length === 0 ) {
+     alert('В хранилище нет ни одного напитка');
+   } else {
+     alert(drinkStorage.getKeys());
+  };
 };
